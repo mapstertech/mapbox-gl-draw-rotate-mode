@@ -14,11 +14,13 @@ var RotateMode = {
     },
 
     onMouseDown: function(state, e) {
-      if(this._ctx.api.get(e.featureTarget.properties.id)) {
-        e.target['dragPan'].disable();
-        state.selectedFeature = this._ctx.api.get(e.featureTarget.properties.id);
-        state.originalCenter = centroid(e.featureTarget);
-        state.originalFeature = e.featureTarget;
+      if(e.featureTarget) {
+        if(this._ctx.api.get(e.featureTarget.properties.id)) {
+          e.target['dragPan'].disable();
+          state.selectedFeature = this._ctx.api.get(e.featureTarget.properties.id);
+          state.originalCenter = centroid(e.featureTarget);
+          state.originalFeature = e.featureTarget;
+        }
       }
       return state;
     },
