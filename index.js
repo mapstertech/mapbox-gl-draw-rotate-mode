@@ -2,10 +2,28 @@ const distance = require('@turf/distance').default;
 const centroid = require('@turf/centroid').default;
 const bearing = require('@turf/bearing').default;
 const destination = require('@turf/destination').default;
+const EventEmitter = require('events');
+const emitter = new EventEmitter();
 
 var RotateMode = {
+
+    rotatestart: function(selectedFeature,originalCenter) {},
+    rotating: function(selectedFeature,originalCenter,lastMouseDown) {},
+    rotateend: function(selectedFeature) {},
+
     onSetup: function(opts) {
       var state = {};
+
+      emitter.addListener('rotatestart',function() {
+        this.rotatestart(state.selectedFeature,state.originalCenter)
+      }.bind(this));
+      emitter.addListener('rotating', function() {
+        this.rotating(state.selectedFeature,state.originalCenter,state.lastMouseDownLngLat)
+      }.bind(this));
+      emitter.addListener('rotateend', function() {
+        this.rotateend(state.selectedFeature,state.lastMouseDownLngLat)
+      }.bind(this));
+
       state.selectedFeature = opts.selectedFeature || false;
       state.lastMouseDownLngLat = false;
       state.originalCenter = false;
@@ -20,6 +38,7 @@ var RotateMode = {
           state.selectedFeature = this._ctx.api.get(e.featureTarget.properties.id);
           state.originalCenter = centroid(e.featureTarget);
           state.originalFeature = e.featureTarget;
+          emitter.emit('rotatestart');
         }
       }
       return state;
@@ -32,6 +51,7 @@ var RotateMode = {
     onDrag: function(state, e) {
       if(state.selectedFeature&&state.mode) {
         if(state.mode==='rotate') {
+          state.lastMouseDownLngLat = {lng:e.lngLat.lng, lat: e.lngLat.lat};
           var draggedBearing = bearing(state.originalCenter, [e.lngLat.lng, e.lngLat.lat]);
           var rotatedCoords = [];
           switch (state.originalFeature.properties['meta:type']) {
@@ -90,6 +110,7 @@ var RotateMode = {
             default:
               return;
           }
+          emitter.emit('rotating');
           var newFeature = state.selectedFeature;
           newFeature.geometry.coordinates = rotatedCoords;
           var thisFeat = this._ctx.api.add(newFeature);
@@ -99,6 +120,7 @@ var RotateMode = {
 
     onMouseUp: function(state, e) {
       e.target['dragPan'].enable();
+      emitter.emit('rotateend');
       state.selectedFeature = false;
       state.lastMouseDownLngLat = false;
       state.originalCenter = false;

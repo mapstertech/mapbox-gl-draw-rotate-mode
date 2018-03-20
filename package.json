@@ -1,6 +1,6 @@
 {
   "name": "mapbox-gl-draw-rotate-mode",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A rotation mode plugin for Mapbox GL JS Draw.",
   "main": "index.js",
   "keywords": [
