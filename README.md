@@ -3,7 +3,7 @@ Mapbox GL Draw Rotate Mode - rotation in GL JS
 
 <div>
     <div id="map" style="width:100%;height:400px;"></div>
-    <button id="rotate" class="btn">Rotate</button> <button class="btn" id="rotate-off">Rotate off</button>
+    <button id="rotate" class="btn" style="color:black;">Rotate</button> <button class="btn" id="rotate-off" style="color:black;">Rotate off</button>
     
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
@@ -29,14 +29,13 @@ Mapbox GL Draw Rotate Mode - rotation in GL JS
          RotateMode: RotateMode,
        }, MapboxDraw.modes),
     });
+    map.addControl(draw);
     
     document.getElementById('rotate').addEventListener('click',function() {
-      console.log(draw);
       draw.changeMode('RotateMode'); // turn on RotateMode
     });
     
     document.getElementById('rotate-off').addEventListener('click',function() {
-      console.log(draw);
       draw.changeMode('simple_select'); // turn off RotateMode
     });
     
