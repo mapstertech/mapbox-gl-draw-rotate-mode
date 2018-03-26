@@ -6,6 +6,7 @@ __[Online Demo](http://mapster.me/mapbox-gl-draw-rotate-mode)__
 <div>
     <div id="map" style="width:100%;height:400px;"></div>
     <script>
+        
     mapboxgl.accessToken = 'pk.eyJ1IjoidGVtcHJhbm92YSIsImEiOiJjaWd0c3M2MW4wOHI2dWNrbzZ5dWo1azVjIn0.x5sm8OjRxO9zO_uUmxYEqg';
     var map = new mapboxgl.Map({
         container: 'map', // container id
