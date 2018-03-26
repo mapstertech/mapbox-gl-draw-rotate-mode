@@ -75,7 +75,7 @@ import RotateMode from 'mapbox-gl-draw-rotate-mode';
 Get the js file from the `dist/` folder and include in your project.
 
 ```
-<script type="text/javascript" src="mapbox-gl-draw-rotate-mode.js></script>"
+<script type="text/javascript" src="mapbox-gl-draw-rotate-mode.js"></script>
 ```
 
 ## Usage
