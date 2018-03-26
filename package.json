@@ -1,6 +1,6 @@
 {
   "name": "mapbox-gl-draw-rotate-mode",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A rotation mode plugin for Mapbox GL JS Draw.",
   "main": "index.js",
   "keywords": [
@@ -8,12 +8,16 @@
     "mapbox-gl",
     "mapbox-gl-draw"
   ],
+  "scripts": {
+    "build": "browserify index.js > dist/mapbox-gl-draw-rotate-mode.min.js"
+  },
   "author": "Victor Temprano <victor@mapster.me> (http://mapster.me)",
   "license": "ISC",
   "dependencies": {
     "@turf/bearing": "^5.1.5",
     "@turf/centroid": "^6.0.0",
     "@turf/destination": "^6.0.0",
-    "@turf/distance": "^6.0.0"
+    "@turf/distance": "^6.0.0",
+    "browserify": "^16.1.1"
   }
 }
