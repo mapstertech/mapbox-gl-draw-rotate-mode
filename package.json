@@ -3,6 +3,8 @@
   "version": "1.0.4",
   "description": "A rotation mode plugin for Mapbox GL JS Draw.",
   "main": "index.js",
+  "homepage" : "https://mapstertech.github.io/mapbox-gl-draw-rotate-mode/",
+  "repository" : "https://github.com/mapstertech/mapbox-gl-draw-rotate-mode",
   "keywords": [
     "mapbox",
     "mapbox-gl",

@@ -1,7 +1,7 @@
 Mapbox GL Draw Rotate Mode
 ==========================
 
-This implements a rotation mode in GL Draw. Module is still in active development.
+This implements a rotation mode in GL Draw. Module is still in active development. See [Mapbox GL Draw Rotate Mode Example](https://mapstertech.github.io/mapbox-gl-draw-rotate-mode/).
 
 Installation
 ------------
