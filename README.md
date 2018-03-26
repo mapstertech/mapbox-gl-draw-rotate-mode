@@ -30,10 +30,13 @@ Mapbox GL Draw Rotate Mode - rotation in GL JS
        }, MapboxDraw.modes),
     });
     
-    console.log(draw);
-
-    draw.changeMode('RotateMode'); // turn on RotateMode
-    draw.changeMode('simple_select'); // turn off RotateMode
+    document.getElementById('rotate').addEventListener('click',function() {
+      draw.changeMode('RotateMode'); // turn on RotateMode
+    });
+    
+    document.getElementById('rotate-off').addEventListener('click',function() {
+      draw.changeMode('simple_select'); // turn off RotateMode
+    });
     
     </script>
  </div>
