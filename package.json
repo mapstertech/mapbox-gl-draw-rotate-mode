@@ -9,7 +9,7 @@
     "mapbox-gl-draw"
   ],
   "scripts": {
-    "build": "browserify index.js > dist/mapbox-gl-draw-rotate-mode.min.js"
+    "build": "browserify index.js --standalone RotateMode > dist/mapbox-gl-draw-rotate-mode.min.js"
   },
   "author": "Victor Temprano <victor@mapster.me> (http://mapster.me)",
   "license": "ISC",
