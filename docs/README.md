@@ -53,6 +53,8 @@ Mapbox GL Draw Rotate Mode
       draw.changeMode('simple_select'); // turn off RotateMode
     });
     
+    console.log(map);
+    
     map.on('RotateMode:rotating',function(selectedFeature,originalCenter,lastMouseDown) {
         console.log(selectedFeature,originalCenter,lastMouseDown)
     });
