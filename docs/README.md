@@ -52,6 +52,10 @@ Mapbox GL Draw Rotate Mode
     document.getElementById('rotate-off').addEventListener('click',function() {
       draw.changeMode('simple_select'); // turn off RotateMode
     });
+    
+    map.on('RotateMode:rotating',function(selectedFeature,originalCenter,lastMouseDown) {
+        console.log(selectedFeature,originalCenter,lastMouseDown)
+    });
 
     </script>
  </div>
