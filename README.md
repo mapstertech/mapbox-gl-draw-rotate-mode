@@ -29,6 +29,8 @@ Mapbox GL Draw Rotate Mode - rotation in GL JS
          RotateMode: RotateMode,
        }, MapboxDraw.modes),
     });
+    
+    console.log(draw);
 
     draw.changeMode('RotateMode'); // turn on RotateMode
     draw.changeMode('simple_select'); // turn off RotateMode
