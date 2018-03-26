@@ -9,7 +9,7 @@ Mapbox GL Draw Rotate Mode - rotation in GL JS
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
     <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.0.4/mapbox-gl-draw.css' type='text/css' />
     <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.0.4/mapbox-gl-draw.js'></script>
-    <script src='https://raw.githubusercontent.com/mapstertech/mapbox-gl-draw-rotate-mode/master/dist/mapbox-gl-draw-rotate-mode.min.js'></script>
+    <script type="text/javascript" src='https://rawgit.com/mapstertech/mapbox-gl-draw-rotate-mode/master/dist/mapbox-gl-draw-rotate-mode.min.js'></script>
 
     <script type="text/javascript">
         
