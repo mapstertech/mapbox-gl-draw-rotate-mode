@@ -1,10 +1,10 @@
 Mapbox GL Draw Rotate Mode - rotation in GL JS
 =================================================
 
-__[Online Demo](http://mapster.me/mapbox-gl-draw-rotate-mode)__
-
 <div>
     <div id="map" style="width:100%;height:400px;"></div>
+    <button id="rotate">Rotate</button> <button id="rotate-off">Rotate off</button>
+    
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
     <script type="text/javascript">
